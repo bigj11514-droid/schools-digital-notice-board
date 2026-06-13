@@ -20,74 +20,7 @@
     </header>
 
     <main class="container">
-      <section class="panel panel--access">
-        <h2>School Access</h2>
-        <p>
-          Parents can view the notice board. School staff may unlock the posting
-          form with the secure school code.
-        </p>
-        <form id="accessForm" class="access-form">
-          <label>
-            School access code
-            <input
-              type="password"
-              id="accessInput"
-              placeholder="Enter school code"
-            />
-          </label>
-          <button type="submit" class="button button--secondary">
-            Unlock Form
-          </button>
-        </form>
-        <p id="accessMessage" class="access-message">
-          The notice form is visible to parents, but adding or editing notices
-          is restricted to school staff.
-        </p>
-      </section>
-
-      <section class="panel panel--form">
-        <h2>Post a New Notice</h2>
-        <form id="noticeForm" class="notice-form">
-          <label>
-            Title
-            <input
-              type="text"
-              id="noticeTitle"
-              placeholder="Enter notice title"
-              required
-            />
-          </label>
-          <label>
-            Details
-            <textarea
-              id="noticeBody"
-              placeholder="Enter notice details"
-              rows="4"
-              required
-            ></textarea>
-          </label>
-          <label>
-            Date
-            <input type="date" id="noticeDate" required />
-          </label>
-          <button type="submit" class="button button--primary">
-            Add Notice
-          </button>
-        </form>
-      </section>
-
-      <section class="panel panel--controls">
-        <div class="search-bar">
-          <input
-            type="search"
-            id="searchInput"
-            placeholder="Search notices..."
-          />
-        </div>
-        <div class="summary">
-          <span id="noticeCount">0 notices</span>
-        </div>
-      </section>
+      <!-- Access and controls temporarily moved to bottom; Principal's Message will be placed above the board -->
 
       <section class="panel panel--board">
         <h2>Notice Board</h2>
@@ -100,7 +33,8 @@
           No notices yet. Add the first announcement above.
         </p>
       </section>
-
+      <!-- Post a New Notice form moved to bottom with School Access -->
+      <!-- Principal's Message moved above the Notice Board -->
       <section class="panel panel--principal">
         <h2>Principal's Message</h2>
         <p>
@@ -181,6 +115,76 @@
             >WhatsApp School</a
           >
         </div>
+      </section>
+
+      <!-- Reinsert Access and Controls at the bottom of the main content -->
+      <section class="panel panel--controls">
+        <div class="search-bar">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search notices..."
+          />
+        </div>
+        <div class="summary">
+          <span id="noticeCount">0 notices</span>
+        </div>
+      </section>
+
+      <section class="panel panel--access">
+        <h2>School Access</h2>
+        <p>
+          Parents can view the notice board. School staff may unlock the posting
+          form with the secure school code.
+        </p>
+        <form id="accessForm" class="access-form">
+          <label>
+            School access code
+            <input
+              type="password"
+              id="accessInput"
+              placeholder="Enter school code"
+            />
+          </label>
+          <button type="submit" class="button button--secondary">
+            Unlock Form
+          </button>
+        </form>
+        <p id="accessMessage" class="access-message">
+          The notice form is visible to parents, but adding or editing notices
+          is restricted to school staff.
+        </p>
+      </section>
+
+      <section class="panel panel--form">
+        <h2>Post a New Notice</h2>
+        <form id="noticeForm" class="notice-form">
+          <label>
+            Title
+            <input
+              type="text"
+              id="noticeTitle"
+              placeholder="Enter notice title"
+              required
+            />
+          </label>
+          <label>
+            Details
+            <textarea
+              id="noticeBody"
+              placeholder="Enter notice details"
+              rows="4"
+              required
+            ></textarea>
+          </label>
+          <label>
+            Date
+            <input type="date" id="noticeDate" required />
+          </label>
+          <button type="submit" class="button button--primary">
+            Add Notice
+          </button>
+        </form>
       </section>
     </main>
 

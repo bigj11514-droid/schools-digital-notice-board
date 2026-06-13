@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abundant Life Academy Notice Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <h1>Abundant Life Academy</h1>
+        <p>Digital Notice Board</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel panel--access">
+        <h2>School Access</h2>
+        <p>
+          Parents can view the notice board. School staff may unlock the posting
+          form with the secure school code.
+        </p>
+        <form id="accessForm" class="access-form">
+          <label>
+            School access code
+            <input
+              type="password"
+              id="accessInput"
+              placeholder="Enter school code"
+            />
+          </label>
+          <button type="submit" class="button button--secondary">
+            Unlock Form
+          </button>
+        </form>
+        <p id="accessMessage" class="access-message">
+          The notice form is visible to parents, but adding or editing notices
+          is restricted to school staff.
+        </p>
+      </section>
+
+      <section class="panel panel--form">
+        <h2>Post a New Notice</h2>
+        <form id="noticeForm" class="notice-form">
+          <label>
+            Title
+            <input
+              type="text"
+              id="noticeTitle"
+              placeholder="Enter notice title"
+              required
+            />
+          </label>
+          <label>
+            Details
+            <textarea
+              id="noticeBody"
+              placeholder="Enter notice details"
+              rows="4"
+              required
+            ></textarea>
+          </label>
+          <label>
+            Date
+            <input type="date" id="noticeDate" required />
+          </label>
+          <button type="submit" class="button button--primary">
+            Add Notice
+          </button>
+        </form>
+      </section>
+
+      <section class="panel panel--controls">
+        <div class="search-bar">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search notices..."
+          />
+        </div>
+        <div class="summary">
+          <span id="noticeCount">0 notices</span>
+        </div>
+      </section>
+
+      <section class="panel panel--board">
+        <h2>Notice Board</h2>
+        <p class="board-note">
+          Parents and school staff can share announcements using the Share
+          button on each notice.
+        </p>
+        <div id="noticeList" class="notice-list"></div>
+        <p id="emptyMessage" class="empty-message">
+          No notices yet. Add the first announcement above.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed for Abundant Life Academy</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

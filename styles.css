@@ -65,6 +65,11 @@ body {
   color: var(--primary);
 }
 
+.form-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
 .notice-form label {
   display: block;
   margin-bottom: 1rem;
@@ -264,6 +269,15 @@ img {
 
 .notice-card h3 {
   margin: 0 0 0.5rem;
+}
+
+.notice-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .notice-card p {

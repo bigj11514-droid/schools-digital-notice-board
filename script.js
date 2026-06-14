@@ -2,6 +2,7 @@ const noticeForm = document.getElementById('noticeForm');
 const noticeTitle = document.getElementById('noticeTitle');
 const noticeBody = document.getElementById('noticeBody');
 const noticeDate = document.getElementById('noticeDate');
+const noticeImage = document.getElementById('noticeImage');
 const noticeList = document.getElementById('noticeList');
 const emptyMessage = document.getElementById('emptyMessage');
 const noticeCount = document.getElementById('noticeCount');
@@ -114,8 +115,13 @@ function formatDate(value) {
 function createNoticeCard(notice) {
   const card = document.createElement('article');
   card.className = 'notice-card';
+  let imageHTML = '';
+  if (notice.image) {
+    imageHTML = `<img src="${notice.image}" alt="Notice image" class="notice-image" />`;
+  }
   card.innerHTML = `
     <h3>${notice.title}</h3>
+    ${imageHTML}
     <p>${notice.body}</p>
     <div class="notice-meta">
       <span>${formatDate(notice.date)}</span>
@@ -161,15 +167,29 @@ function addNotice(event) {
   const title = noticeTitle.value.trim();
   const body = noticeBody.value.trim();
   const date = noticeDate.value;
+  const imageFile = noticeImage.files[0];
 
   if (!title || !body || !date) {
     return;
   }
 
+  if (imageFile) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const imageData = e.target.result;
+      createAndSaveNotice(title, body, date, imageData);
+    };
+    reader.readAsDataURL(imageFile);
+  } else {
+    createAndSaveNotice(title, body, date, null);
+  }
+}
+
+function createAndSaveNotice(title, body, date, imageData) {
   if (editingId) {
     notices = notices.map((notice) =>
       notice.id === editingId
-        ? { ...notice, title, body, date, updatedAt: new Date().toISOString() }
+        ? { ...notice, title, body, date, image: imageData || notice.image, updatedAt: new Date().toISOString() }
         : notice,
     );
     editingId = null;
@@ -180,6 +200,7 @@ function addNotice(event) {
       title,
       body,
       date,
+      image: imageData,
       createdAt: new Date().toISOString(),
       updatedAt: null,
     });
@@ -188,6 +209,7 @@ function addNotice(event) {
   saveNotices();
   renderNotices(searchInput.value);
   noticeForm.reset();
+  noticeImage.value = '';
 }
 
 function startEditing(id) {

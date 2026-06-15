@@ -216,6 +216,47 @@ a{
   color: var(--text);
 }
 
+.panel--timetable {
+  overflow-x: auto;
+}
+
+.timetable-note {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.timetable-wrapper {
+  overflow-x: auto;
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.timetable-table th,
+.timetable-table td {
+  padding: 1rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid #e4efff;
+}
+
+.timetable-table thead th {
+  color: var(--primary);
+  font-weight: 700;
+  background: #f5f9ff;
+}
+
+.timetable-table tbody tr:nth-child(odd) {
+  background: #f9fbff;
+}
+
+.timetable-table tbody tr:hover {
+  background: #eef6ff;
+}
+
 .download-grid,
 .gallery-grid {
   display: grid;

@@ -535,14 +535,15 @@ img {
   padding: 1rem 0 2rem;
 }
 
-.brand{
+.brand {
     color: #1d375e;
-    text-shadow: 3px 0px 1px rgb(235, 216, 238);
-    font-size: 150%;
-    padding: 10px;
+    text-shadow: 3px 0px 1px rgba(235, 216, 238, 0.8);
+    font-size: 1.1rem;
+    padding: 10px 0;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: inline-block;
 }
 
 @media (min-width: 900px) {
